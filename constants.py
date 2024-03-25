@@ -1,0 +1,8 @@
+POSITION_PLAYER_1 = (-285, 0)
+POSITION_PLAYER_2 = (285, 0)
+
+UP = 'w'
+DOWN = 's'
+
+CONTROLS_PLAYER_1 = ['w', 's']
+CONTROLS_PLAYER_2 = ['o', 'l']
