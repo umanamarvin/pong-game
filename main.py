@@ -23,10 +23,19 @@ game_on = True
 while game_on:
     player_1.control_paddle(screen=screen, controls=constants.CONTROLS_PLAYER_1)
     player_2.control_paddle(screen= screen, controls=constants.CONTROLS_PLAYER_2)
-
-    ball.move_ball_to_player_2()
+    ball.move_ball_to_player()
+    ball.ball_bounce_border()
 
     screen.update()
     time.sleep(0.1)
+
+    if ball.distance(player_1) < 50 and ball.xcor() < -270:
+        ball.ball_bounce_paddle()
+
+    if ball.distance(player_2) < 50 and ball.xcor() > 270:
+        ball.ball_bounce_paddle()
+
+    ball.ball_out_left()
+    ball.ball_out_right()
 
 screen.exitonclick()

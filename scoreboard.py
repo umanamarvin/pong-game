@@ -1,7 +1,8 @@
 from ball import Ball
+from turtle import Turtle
 
 
-class Scoreboard(Ball):
+class Scoreboard(Turtle):
 
     def __init__(self):
         super().__init__()
