@@ -1,5 +1,4 @@
 from turtle import Turtle
-from paddle import Paddle
 
 
 class Ball(Turtle):
@@ -28,15 +27,22 @@ class Ball(Turtle):
             self.step_y *= -1
 
     def ball_bounce_paddle(self):
-            self.step_x *= -1
+        self.step_x *= -1
 
     def ball_out_left(self):
         if self.xcor() < -280:
             print('Ball out left')
-            self.goto(0,0)
+            self.goto(0, 0)
+            self.step_x *= -1
+            return True
+        else:
+            return False
 
     def ball_out_right(self):
         if self.xcor() > 280:
             print('Ball out right')
-            self.goto(0,0)
-
+            self.goto(0, 0)
+            self.step_x *= -1
+            return True
+        else:
+            return False
